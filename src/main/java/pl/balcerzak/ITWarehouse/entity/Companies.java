@@ -19,7 +19,7 @@ public class Companies {
     private long idCompanie;
     private String name;
     @ManyToOne
-    @JoinColumn(name = "id_adress")
+    @JoinColumn(name = "id_address")
     private Addresses addresses;
     private String nip;
 
