@@ -12,7 +12,8 @@ import javax.persistence.*;
 @EqualsAndHashCode
 @Entity
 @NoArgsConstructor
-public class Distributors {
+@Table(name = "distributors")
+public class Distributor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

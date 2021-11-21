@@ -23,7 +23,7 @@ public class Transactions {
     private Demand demand;
     @ManyToOne
     @JoinColumn(name = "id_distributor")
-    private Distributors distributors;
+    private Distributor distributor;
     private Date transactionDate;
     private String price;
 
