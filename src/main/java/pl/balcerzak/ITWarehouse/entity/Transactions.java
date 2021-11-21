@@ -20,7 +20,7 @@ public class Transactions {
     private long idTransaction;
     @ManyToOne
     @JoinColumn(name = "id_demand")
-    private Demands demands;
+    private Demand demand;
     @ManyToOne
     @JoinColumn(name = "id_distributor")
     private Distributors distributors;

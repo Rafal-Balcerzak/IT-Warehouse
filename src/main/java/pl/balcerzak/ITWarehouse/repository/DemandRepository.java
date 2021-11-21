@@ -2,11 +2,11 @@ package pl.balcerzak.ITWarehouse.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pl.balcerzak.ITWarehouse.entity.Demands;
+import pl.balcerzak.ITWarehouse.entity.Demand;
 
 @Repository
-public interface DemandsRepository extends JpaRepository<Demands, Long> {
+public interface DemandRepository extends JpaRepository<Demand, Long> {
 
-    Demands findByIdDemands(long id);
+    Demand findByIdDemand(long id);
 
 }

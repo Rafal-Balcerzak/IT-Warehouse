@@ -13,11 +13,12 @@ import java.util.Date;
 @EqualsAndHashCode
 @Entity
 @NoArgsConstructor
-public class Demands {
+@Table(name = "demands")
+public class Demand {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idDemands;
+    private long idDemand;
     private String productType;
     private String model;
     private Date issueDate;
