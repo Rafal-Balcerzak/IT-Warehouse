@@ -30,6 +30,6 @@ public class Product {
     private boolean inStock;
     @ManyToOne
     @JoinColumn(name = "id_transaction")
-    private Transactions transactions;
+    private Transaction transaction;
 
 }
