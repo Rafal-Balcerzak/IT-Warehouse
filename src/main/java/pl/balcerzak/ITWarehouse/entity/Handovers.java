@@ -23,6 +23,6 @@ public class Handovers {
     private Products products;
     @ManyToOne
     @JoinColumn(name = "id_employee")
-    private Employees employees;
+    private Employee employee;
     private Date handoverDate;
 }
