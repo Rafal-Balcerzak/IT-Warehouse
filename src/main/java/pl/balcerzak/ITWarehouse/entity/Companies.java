@@ -20,7 +20,7 @@ public class Companies {
     private String name;
     @ManyToOne
     @JoinColumn(name = "id_address")
-    private Addresses addresses;
+    private Address address;
     private String nip;
 
 }

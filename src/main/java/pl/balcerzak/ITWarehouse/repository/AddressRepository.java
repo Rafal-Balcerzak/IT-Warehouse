@@ -2,11 +2,11 @@ package pl.balcerzak.ITWarehouse.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pl.balcerzak.ITWarehouse.entity.Addresses;
+import pl.balcerzak.ITWarehouse.entity.Address;
 
 @Repository
-public interface AddressesRepository extends JpaRepository<Addresses, Long> {
+public interface AddressRepository extends JpaRepository<Address, Long> {
 
-    Addresses findByIdAddress(long id);
+    Address findByIdAddress(long id);
 
 }
