@@ -2,11 +2,11 @@ package pl.balcerzak.ITWarehouse.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pl.balcerzak.ITWarehouse.entity.Companies;
+import pl.balcerzak.ITWarehouse.entity.Company;
 
 @Repository
-public interface CompaniesRepository extends JpaRepository<Companies, Long> {
+public interface CompanyRepository extends JpaRepository<Company, Long> {
 
-    Companies findByIdCompanie(long id);
+    Company findByIdCompany(long id);
 
 }

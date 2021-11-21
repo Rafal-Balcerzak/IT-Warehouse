@@ -18,8 +18,8 @@ public class Distributors {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idDistributor;
     @ManyToOne
-    @JoinColumn(name = "id_companie")
-    private Companies companies;
+    @JoinColumn(name = "id_company")
+    private Company company;
     private String phoneNumber;
     private String email;
 }

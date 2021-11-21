@@ -24,6 +24,6 @@ public class Demands {
     private String budget;
     private int quantity;
     @ManyToOne
-    @JoinColumn(name = "id_companie")
-    private Companies companies;
+    @JoinColumn(name = "id_company")
+    private Company company;
 }

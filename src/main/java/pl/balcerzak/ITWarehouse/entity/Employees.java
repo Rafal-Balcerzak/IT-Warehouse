@@ -24,6 +24,6 @@ public class Employees {
     private String phoneNumber;
     private String email;
     @ManyToOne
-    @JoinColumn(name = "id_companie")
-    private Companies companies;
+    @JoinColumn(name = "id_company")
+    private Company company;
 }

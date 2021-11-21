@@ -12,11 +12,12 @@ import javax.persistence.*;
 @EqualsAndHashCode
 @Entity
 @NoArgsConstructor
-public class Companies {
+@Table(name = "companies")
+public class Company {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idCompanie;
+    private long idCompany;
     private String name;
     @ManyToOne
     @JoinColumn(name = "id_address")
