@@ -13,7 +13,8 @@ import java.util.Date;
 @EqualsAndHashCode
 @Entity
 @NoArgsConstructor
-public class Handovers {
+@Table(name = "handovers")
+public class Handover {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
