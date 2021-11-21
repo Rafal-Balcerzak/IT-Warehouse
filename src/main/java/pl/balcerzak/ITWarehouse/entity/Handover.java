@@ -21,7 +21,7 @@ public class Handover {
     private long idHandover;
     @ManyToOne
     @JoinColumn(name = "id_product")
-    private Products products;
+    private Product product;
     @ManyToOne
     @JoinColumn(name = "id_employee")
     private Employee employee;

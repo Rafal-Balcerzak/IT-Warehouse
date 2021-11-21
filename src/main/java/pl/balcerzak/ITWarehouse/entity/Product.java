@@ -13,7 +13,8 @@ import java.util.Date;
 @EqualsAndHashCode
 @Entity
 @NoArgsConstructor
-public class Products {
+@Table(name = "products")
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
