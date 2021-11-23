@@ -12,18 +12,15 @@ import javax.persistence.*;
 @EqualsAndHashCode
 @Entity
 @NoArgsConstructor
-public class Employees {
+@Table(name = "distributors")
+public class Distributor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idEmployee;
-    private String name;
-    private String lastName;
-    private String department;
-    private String position;
+    private long idDistributor;
+    @ManyToOne
+    @JoinColumn(name = "id_company")
+    private Company company;
     private String phoneNumber;
     private String email;
-    @ManyToOne
-    @JoinColumn(name = "id_companie")
-    private Companies companies;
 }

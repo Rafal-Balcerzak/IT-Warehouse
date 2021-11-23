@@ -6,23 +6,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Getter
 @Setter
 @EqualsAndHashCode
 @Entity
 @NoArgsConstructor
-public class Handovers {
+@Table(name = "companies")
+public class Company {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idHandover;
+    private long idCompany;
+    private String name;
     @ManyToOne
-    @JoinColumn(name = "id_product")
-    private Products products;
-    @ManyToOne
-    @JoinColumn(name = "id_employee")
-    private Employees employees;
-    private Date handoverDate;
+    @JoinColumn(name = "id_address")
+    private Address address;
+    private String nip;
+
 }

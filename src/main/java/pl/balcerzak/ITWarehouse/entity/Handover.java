@@ -13,18 +13,17 @@ import java.util.Date;
 @EqualsAndHashCode
 @Entity
 @NoArgsConstructor
-public class Transactions {
+@Table(name = "handovers")
+public class Handover {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idTransaction;
+    private long idHandover;
     @ManyToOne
-    @JoinColumn(name = "id_demand")
-    private Demands demands;
+    @JoinColumn(name = "id_product")
+    private Product product;
     @ManyToOne
-    @JoinColumn(name = "id_distributor")
-    private Distributors distributors;
-    private Date transactionDate;
-    private String price;
-
+    @JoinColumn(name = "id_employee")
+    private Employee employee;
+    private Date handoverDate;
 }

@@ -13,17 +13,19 @@ import java.util.Date;
 @EqualsAndHashCode
 @Entity
 @NoArgsConstructor
-public class Demands {
+@Table(name = "transactions")
+public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idDemands;
-    private String productType;
-    private String model;
-    private Date issueDate;
-    private String budget;
-    private int quantity;
+    private long idTransaction;
     @ManyToOne
-    @JoinColumn(name = "id_companie")
-    private Companies companies;
+    @JoinColumn(name = "id_demand")
+    private Demand demand;
+    @ManyToOne
+    @JoinColumn(name = "id_distributor")
+    private Distributor distributor;
+    private Date transactionDate;
+    private String price;
+
 }

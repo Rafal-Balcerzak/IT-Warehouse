@@ -13,7 +13,8 @@ import java.util.Date;
 @EqualsAndHashCode
 @Entity
 @NoArgsConstructor
-public class Products {
+@Table(name = "products")
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +30,6 @@ public class Products {
     private boolean inStock;
     @ManyToOne
     @JoinColumn(name = "id_transaction")
-    private Transactions transactions;
+    private Transaction transaction;
 
 }
