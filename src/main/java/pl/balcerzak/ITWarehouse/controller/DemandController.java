@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/demand")
+@CrossOrigin("*")
 public class DemandController {
 
     private final DemandService demandService;

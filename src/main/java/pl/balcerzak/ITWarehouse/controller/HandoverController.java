@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/handover")
+@CrossOrigin("*")
 public class HandoverController {
 
     private final HandoverService handoverService;
