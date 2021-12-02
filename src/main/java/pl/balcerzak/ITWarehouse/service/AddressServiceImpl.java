@@ -29,4 +29,20 @@ public class AddressServiceImpl implements AddressService {
     public Address addAddress(Address address) {
         return addressRepository.save(address);
     }
+
+    @Override
+    public void deleteAddress(Address address) {
+        addressRepository.delete(address);
+    }
+
+    @Override
+    public void deleteAddressById(long id) {
+        Address address = addressRepository.findByIdAddress(id);
+        addressRepository.delete(address);
+    }
+
+    @Override
+    public Address editAddress(Address address) {
+        return addressRepository.save(address);
+    }
 }

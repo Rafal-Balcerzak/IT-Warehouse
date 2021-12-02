@@ -12,4 +12,9 @@ public interface AddressService {
 
     Address addAddress(Address address);
 
+    void deleteAddress(Address address);
+
+    void deleteAddressById(long id);
+
+    Address editAddress(Address address);
 }
