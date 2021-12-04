@@ -12,4 +12,7 @@ public interface CompanyService {
 
     Company addCompany(Company company);
 
+    void deleteCompanyById(long id);
+
+    Company editCompany(Company company);
 }

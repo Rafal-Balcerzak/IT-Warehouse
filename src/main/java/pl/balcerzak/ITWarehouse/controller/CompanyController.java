@@ -32,4 +32,14 @@ public class CompanyController {
     ResponseEntity<Company> addCompany(@RequestBody Company company){
         return ResponseEntity.ok(companyService.addCompany(company));
     }
+
+    @DeleteMapping("/{id}")
+    void deleteCompanyById(@PathVariable long id){
+        companyService.deleteCompanyById(id);
+    }
+
+    @PatchMapping
+    ResponseEntity<Company> editCompany(@RequestBody Company company){
+        return ResponseEntity.ok(companyService.editCompany(company));
+    }
 }
