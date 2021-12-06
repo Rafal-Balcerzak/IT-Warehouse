@@ -12,4 +12,8 @@ public interface DemandService {
 
     Demand addDemand(Demand demand);
 
+    void deleteDemandById(long id);
+
+    Demand editDemand(Demand demand);
+
 }

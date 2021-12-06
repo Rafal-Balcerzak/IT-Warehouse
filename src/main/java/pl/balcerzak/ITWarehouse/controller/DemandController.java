@@ -32,4 +32,14 @@ public class DemandController {
     ResponseEntity<Demand> addDemand(@RequestBody Demand demand) {
         return ResponseEntity.ok(demandService.addDemand(demand));
     }
+
+    @DeleteMapping("/{id}")
+    void deleteDemandById(@PathVariable long id){
+        demandService.deleteDemandById(id);
+    }
+
+    @PatchMapping
+    ResponseEntity<Demand> editDemand(@RequestBody Demand demand){
+        return ResponseEntity.ok(demandService.editDemand(demand));
+    }
 }
