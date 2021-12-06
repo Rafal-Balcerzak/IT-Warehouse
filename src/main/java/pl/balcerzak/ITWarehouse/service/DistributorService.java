@@ -12,4 +12,8 @@ public interface DistributorService {
 
     Distributor addDistributor(Distributor distributor);
 
+    void deleteDistributorById(long id);
+
+    Distributor editDistributor(Distributor distributor);
+
 }

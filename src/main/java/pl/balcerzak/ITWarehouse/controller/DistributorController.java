@@ -32,4 +32,14 @@ public class DistributorController {
     ResponseEntity<Distributor> addDistributor(@RequestBody Distributor distributor){
         return ResponseEntity.ok(distributorService.addDistributor(distributor));
     }
+
+    @DeleteMapping("/{id}")
+    void deleteDistributorById(@PathVariable long id){
+        distributorService.deleteDistributorById(id);
+    }
+
+    @PatchMapping
+    ResponseEntity<Distributor> editDistributor(@RequestBody Distributor distributor){
+        return ResponseEntity.ok(distributorService.editDistributor(distributor));
+    }
 }
