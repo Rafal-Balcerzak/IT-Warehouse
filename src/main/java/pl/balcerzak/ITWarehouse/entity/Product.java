@@ -19,7 +19,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idProduct;
-    private String product_type;
+    private String productType;
     private String producer;
     private String model;
     private String inventoryNumber;
