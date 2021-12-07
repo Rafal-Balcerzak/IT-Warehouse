@@ -19,17 +19,27 @@ public class HandoverController {
     }
 
     @GetMapping
-    ResponseEntity<List<Handover>> getAllHandovers(){
+    ResponseEntity<List<Handover>> getAllHandovers() {
         return ResponseEntity.ok(handoverService.getAllHandovers());
     }
 
     @GetMapping("/{id}")
-    ResponseEntity<Handover> getHandoverById(@PathVariable long id){
+    ResponseEntity<Handover> getHandoverById(@PathVariable long id) {
         return ResponseEntity.ok(handoverService.getHandoverById(id));
     }
 
     @PostMapping
-    ResponseEntity<Handover> addHandover(@RequestBody Handover handover){
+    ResponseEntity<Handover> addHandover(@RequestBody Handover handover) {
         return ResponseEntity.ok(handoverService.addHandover(handover));
+    }
+
+    @DeleteMapping("/{id}")
+    void deleteHandoverById(@PathVariable long id) {
+        handoverService.deleteHandoverById(id);
+    }
+
+    @PatchMapping
+    ResponseEntity<Handover> editHandover(@RequestBody Handover handover){
+        return ResponseEntity.ok(handoverService.editHandover(handover));
     }
 }
