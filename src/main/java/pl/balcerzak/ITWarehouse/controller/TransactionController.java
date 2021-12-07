@@ -32,4 +32,14 @@ public class TransactionController {
     ResponseEntity<Transaction> addTransaction(@RequestBody Transaction transaction){
         return ResponseEntity.ok(transactionService.addTransaction(transaction));
     }
+
+    @DeleteMapping("/{id}")
+    void deleteTransactionById(@PathVariable long id){
+        transactionService.deleteTransactionById(id);
+    }
+
+    @PatchMapping
+    ResponseEntity<Transaction> editTransaction(@RequestBody Transaction transaction){
+        return ResponseEntity.ok(transactionService.editTransaction(transaction));
+    }
 }
