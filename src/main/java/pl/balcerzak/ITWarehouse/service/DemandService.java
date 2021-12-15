@@ -16,4 +16,8 @@ public interface DemandService {
 
     Demand editDemand(Demand demand);
 
+    List<Demand> findAllByIsDoneFalse();
+
+    long countByIsDoneFalse();
+
 }

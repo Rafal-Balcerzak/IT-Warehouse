@@ -40,4 +40,14 @@ public class DemandServiceImpl implements DemandService {
     public Demand editDemand(Demand demand) {
         return demandRepository.save(demand);
     }
+
+    @Override
+    public List<Demand> findAllByIsDoneFalse() {
+        return demandRepository.findAllByIsDoneFalse();
+    }
+
+    @Override
+    public long countByIsDoneFalse(){
+        return demandRepository.countByIsDoneFalse();
+    }
 }

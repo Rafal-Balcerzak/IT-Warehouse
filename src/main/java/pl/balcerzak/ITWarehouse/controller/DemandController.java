@@ -42,4 +42,14 @@ public class DemandController {
     ResponseEntity<Demand> editDemand(@RequestBody Demand demand){
         return ResponseEntity.ok(demandService.editDemand(demand));
     }
+
+    @GetMapping("/done")
+    ResponseEntity<List<Demand>> findAllByIsDoneFalse(){
+        return ResponseEntity.ok(demandService.findAllByIsDoneFalse());
+    }
+
+    @GetMapping("/notDoneCount")
+    long countByIsDoneFalse(){
+        return demandService.countByIsDoneFalse();
+    }
 }
