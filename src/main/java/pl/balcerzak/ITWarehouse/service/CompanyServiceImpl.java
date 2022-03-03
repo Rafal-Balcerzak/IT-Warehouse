@@ -29,4 +29,15 @@ public class CompanyServiceImpl implements CompanyService {
     public Company addCompany(Company company) {
         return companyRepository.save(company);
     }
+
+    @Override
+    public void deleteCompanyById(long id) {
+        Company company = companyRepository.findByIdCompany(id);
+        companyRepository.delete(company);
+    }
+
+    @Override
+    public Company editCompany(Company company) {
+        return companyRepository.save(company);
+    }
 }

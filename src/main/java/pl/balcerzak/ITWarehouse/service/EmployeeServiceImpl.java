@@ -34,4 +34,15 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<Employee> getAllEmployeesByCompanyName(String companyName) {
         return employeeRepository.findAllByCompany_Name(companyName);
     }
+
+    @Override
+    public void deleteEmployeeById(long id) {
+        Employee employee = employeeRepository.findByIdEmployee(id);
+        employeeRepository.delete(employee);
+    }
+
+    @Override
+    public Employee editEmployee(Employee employee) {
+        return employeeRepository.save(employee);
+    }
 }

@@ -30,4 +30,15 @@ public class HandoverServiceImpl implements HandoverService {
     public Handover addHandover(Handover handover) {
         return handoverRepository.save(handover);
     }
+
+    @Override
+    public void deleteHandoverById(long id) {
+        Handover handover = handoverRepository.findByIdHandover(id);
+        handoverRepository.delete(handover);
+    }
+
+    @Override
+    public Handover editHandover(Handover handover) {
+        return handoverRepository.save(handover);
+    }
 }

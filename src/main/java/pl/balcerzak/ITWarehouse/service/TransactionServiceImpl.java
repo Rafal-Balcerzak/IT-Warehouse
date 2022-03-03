@@ -29,4 +29,15 @@ public class TransactionServiceImpl implements TransactionService {
     public Transaction addTransaction(Transaction transaction) {
         return transactionRepository.save(transaction);
     }
+
+    @Override
+    public void deleteTransactionById(long id) {
+        Transaction transaction = transactionRepository.findByIdTransaction(id);
+        transactionRepository.delete(transaction);
+    }
+
+    @Override
+    public Transaction editTransaction(Transaction transaction) {
+        return transactionRepository.save(transaction);
+    }
 }

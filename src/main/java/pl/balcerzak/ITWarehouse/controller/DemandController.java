@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/demand")
+@CrossOrigin("*")
 public class DemandController {
 
     private final DemandService demandService;
@@ -30,5 +31,25 @@ public class DemandController {
     @PostMapping
     ResponseEntity<Demand> addDemand(@RequestBody Demand demand) {
         return ResponseEntity.ok(demandService.addDemand(demand));
+    }
+
+    @DeleteMapping("/{id}")
+    void deleteDemandById(@PathVariable long id){
+        demandService.deleteDemandById(id);
+    }
+
+    @PatchMapping
+    ResponseEntity<Demand> editDemand(@RequestBody Demand demand){
+        return ResponseEntity.ok(demandService.editDemand(demand));
+    }
+
+    @GetMapping("/done")
+    ResponseEntity<List<Demand>> findAllByIsDoneFalse(){
+        return ResponseEntity.ok(demandService.findAllByIsDoneFalse());
+    }
+
+    @GetMapping("/notDoneCount")
+    long countByIsDoneFalse(){
+        return demandService.countByIsDoneFalse();
     }
 }

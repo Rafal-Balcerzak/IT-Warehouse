@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/distributor")
+@CrossOrigin("*")
 public class DistributorController {
 
     private final DistributorService distributorService;
@@ -30,5 +31,15 @@ public class DistributorController {
     @PostMapping
     ResponseEntity<Distributor> addDistributor(@RequestBody Distributor distributor){
         return ResponseEntity.ok(distributorService.addDistributor(distributor));
+    }
+
+    @DeleteMapping("/{id}")
+    void deleteDistributorById(@PathVariable long id){
+        distributorService.deleteDistributorById(id);
+    }
+
+    @PatchMapping
+    ResponseEntity<Distributor> editDistributor(@RequestBody Distributor distributor){
+        return ResponseEntity.ok(distributorService.editDistributor(distributor));
     }
 }

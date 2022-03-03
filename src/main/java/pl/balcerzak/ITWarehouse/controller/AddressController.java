@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/address")
+@CrossOrigin("*")
 public class AddressController {
 
     private final AddressService addressService;
@@ -31,4 +32,20 @@ public class AddressController {
     ResponseEntity<Address> addAddress(@RequestBody Address address) {
         return ResponseEntity.ok(addressService.addAddress(address));
     }
+
+    @DeleteMapping
+    void deleteAddress(@RequestBody Address address){
+        addressService.deleteAddress(address);
+    }
+
+    @DeleteMapping("/{id}")
+    void deleteAddressById(@PathVariable long id){
+        addressService.deleteAddressById(id);
+    }
+
+    @PatchMapping
+    ResponseEntity<Address> editAddress(@RequestBody Address address){
+        return ResponseEntity.ok(addressService.editAddress(address));
+    }
+
 }

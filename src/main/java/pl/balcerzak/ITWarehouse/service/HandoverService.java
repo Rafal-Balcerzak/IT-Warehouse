@@ -12,4 +12,8 @@ public interface HandoverService {
 
     Handover addHandover(Handover handover);
 
+    void deleteHandoverById(long id);
+
+    Handover editHandover(Handover handover);
+
 }

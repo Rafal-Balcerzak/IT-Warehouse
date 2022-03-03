@@ -27,4 +27,5 @@ public class Demand {
     @ManyToOne
     @JoinColumn(name = "id_company")
     private Company company;
+    private boolean isDone;
 }

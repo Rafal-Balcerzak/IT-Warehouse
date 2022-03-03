@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/company")
+@CrossOrigin("*")
 public class CompanyController {
 
     private final CompanyService companyService;
@@ -30,5 +31,15 @@ public class CompanyController {
     @PostMapping
     ResponseEntity<Company> addCompany(@RequestBody Company company){
         return ResponseEntity.ok(companyService.addCompany(company));
+    }
+
+    @DeleteMapping("/{id}")
+    void deleteCompanyById(@PathVariable long id){
+        companyService.deleteCompanyById(id);
+    }
+
+    @PatchMapping
+    ResponseEntity<Company> editCompany(@RequestBody Company company){
+        return ResponseEntity.ok(companyService.editCompany(company));
     }
 }

@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/product")
+@CrossOrigin("*")
 public class ProductController {
 
     private final ProductService productService;
@@ -31,5 +32,15 @@ public class ProductController {
     @PostMapping
     ResponseEntity<Product> addProduct(@RequestBody Product product){
         return ResponseEntity.ok(productService.addProduct(product));
+    }
+
+    @DeleteMapping("/{id}")
+    void deleteProductById(@PathVariable long id){
+        productService.deleteProductById(id);
+    }
+
+    @PatchMapping
+    ResponseEntity<Product> editProduct(@RequestBody Product product){
+        return ResponseEntity.ok(productService.editProduct(product));
     }
 }

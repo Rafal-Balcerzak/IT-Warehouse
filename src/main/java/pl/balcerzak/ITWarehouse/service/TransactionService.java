@@ -12,4 +12,7 @@ public interface TransactionService {
 
     Transaction addTransaction(Transaction transaction);
 
+    void deleteTransactionById(long id);
+
+    Transaction editTransaction(Transaction transaction);
 }

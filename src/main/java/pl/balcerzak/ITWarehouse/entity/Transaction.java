@@ -27,5 +27,9 @@ public class Transaction {
     private Distributor distributor;
     private Date transactionDate;
     private String price;
+    private String description;
+    @Lob
+    private byte[] attachment;
+    private String attachmentContentType;
 
 }

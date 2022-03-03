@@ -29,4 +29,25 @@ public class DemandServiceImpl implements DemandService {
     public Demand addDemand(Demand demand) {
         return demandRepository.save(demand);
     }
+
+    @Override
+    public void deleteDemandById(long id) {
+        Demand demand = demandRepository.findByIdDemand(id);
+        demandRepository.delete(demand);
+    }
+
+    @Override
+    public Demand editDemand(Demand demand) {
+        return demandRepository.save(demand);
+    }
+
+    @Override
+    public List<Demand> findAllByIsDoneFalse() {
+        return demandRepository.findAllByIsDoneFalse();
+    }
+
+    @Override
+    public long countByIsDoneFalse(){
+        return demandRepository.countByIsDoneFalse();
+    }
 }

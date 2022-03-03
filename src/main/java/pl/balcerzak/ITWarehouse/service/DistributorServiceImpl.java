@@ -29,4 +29,15 @@ public class DistributorServiceImpl implements DistributorService {
     public Distributor addDistributor(Distributor distributor) {
         return distributorRepository.save(distributor);
     }
+
+    @Override
+    public void deleteDistributorById(long id) {
+        Distributor distributor = distributorRepository.findByIdDistributor(id);
+        distributorRepository.delete(distributor);
+    }
+
+    @Override
+    public Distributor editDistributor(Distributor distributor) {
+        return distributorRepository.save(distributor);
+    }
 }

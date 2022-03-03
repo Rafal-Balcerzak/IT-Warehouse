@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/employee")
+@CrossOrigin("*")
 public class EmployeeController {
 
     private final EmployeeService employeeService;
@@ -18,22 +19,32 @@ public class EmployeeController {
     }
 
     @GetMapping
-    ResponseEntity<List<Employee>> getAllEmployees(){
+    ResponseEntity<List<Employee>> getAllEmployees() {
         return ResponseEntity.ok(employeeService.getAllEmployee());
     }
 
     @GetMapping("/{id}")
-    ResponseEntity<Employee> getEmployeeById(@PathVariable long id){
+    ResponseEntity<Employee> getEmployeeById(@PathVariable long id) {
         return ResponseEntity.ok(employeeService.getEmployeeById(id));
     }
 
     @PostMapping
-    ResponseEntity<Employee> addEmployee(@RequestBody Employee employee){
+    ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
         return ResponseEntity.ok(employeeService.addEmployee(employee));
     }
 
     @GetMapping("/company/{companyName}")
-    ResponseEntity<List<Employee>> getAllEmployeesByCompanyName(@PathVariable String companyName){
+    ResponseEntity<List<Employee>> getAllEmployeesByCompanyName(@PathVariable String companyName) {
         return ResponseEntity.ok(employeeService.getAllEmployeesByCompanyName(companyName));
+    }
+
+    @DeleteMapping("{id}")
+    void deleteEmployeeById(@PathVariable long id) {
+        employeeService.deleteEmployeeById(id);
+    }
+
+    @PatchMapping
+    ResponseEntity<Employee> editEmployee(@RequestBody Employee employee) {
+        return ResponseEntity.ok(employeeService.editEmployee(employee));
     }
 }
